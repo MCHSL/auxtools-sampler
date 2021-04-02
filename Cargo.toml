@@ -1,0 +1,17 @@
+[package]
+name = "profiler"
+version = "0.1.0"
+authors = ["MCHSL <michal.sul@wp.pl>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+auxtools = { git = "https://github.com/willox/auxtools" }
+lazy_static = "1.4.0"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["winuser", "libloaderapi", "errhandlingapi", "handleapi"] }
